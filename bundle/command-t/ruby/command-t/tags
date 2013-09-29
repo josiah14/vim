@@ -1,0 +1,299 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AR	Makefile	/^AR = ar$/;"	m
+BINDIR	Makefile	/^BINDIR        = $(bindir)$/;"	m
+BufferFinder	finder/buffer_finder.rb	/^  class BufferFinder < Finder$/;"	c	class:CommandT
+BufferScanner	scanner/buffer_scanner.rb	/^  class BufferScanner < Scanner$/;"	c	class:CommandT
+CC	Makefile	/^CC = xcrun cc$/;"	m
+CFLAGS	Makefile	/^CFLAGS   =  -fno-common -arch i386 -arch x86_64 -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common $(cflags) $/;"	m
+CLEANFILES	Makefile	/^CLEANFILES = mkmf.log$/;"	m
+CLEANLIBS	Makefile	/^CLEANLIBS     = $(TARGET).bundle $(TARGET).il? $(TARGET).tds $(TARGET).map$/;"	m
+CLEANOBJS	Makefile	/^CLEANOBJS     = *.o *.a *.s[ol] *.pdb *.exp *.bak$/;"	m
+COPY	Makefile	/^COPY = cp$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = -DHAVE_RUBY_H  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE $(DEFS) $(cppflags)$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = $(CFLAGS) $/;"	m
+CommandT	controller.rb	/^module CommandT$/;"	m
+CommandT	finder.rb	/^module CommandT$/;"	m
+CommandT	finder/buffer_finder.rb	/^module CommandT$/;"	m
+CommandT	finder/file_finder.rb	/^module CommandT$/;"	m
+CommandT	finder/jump_finder.rb	/^module CommandT$/;"	m
+CommandT	finder/tag_finder.rb	/^module CommandT$/;"	m
+CommandT	match_window.rb	/^module CommandT$/;"	m
+CommandT	prompt.rb	/^module CommandT$/;"	m
+CommandT	scanner.rb	/^module CommandT$/;"	m
+CommandT	scanner/buffer_scanner.rb	/^module CommandT$/;"	m
+CommandT	scanner/file_scanner.rb	/^module CommandT$/;"	m
+CommandT	scanner/jump_scanner.rb	/^module CommandT$/;"	m
+CommandT	scanner/tag_scanner.rb	/^module CommandT$/;"	m
+CommandT	settings.rb	/^module CommandT$/;"	m
+CommandT	stub.rb	/^module CommandT$/;"	m
+CommandT	vim.rb	/^module CommandT$/;"	m
+CommandT	vim/path_utilities.rb	/^module CommandT$/;"	m
+CommandT	vim/screen.rb	/^module CommandT$/;"	m
+CommandT	vim/window.rb	/^module CommandT$/;"	m
+CommandTMatch_initialize	match.c	/^VALUE CommandTMatch_initialize(int argc, VALUE *argv, VALUE self)$/;"	f
+CommandTMatch_matches	match.c	/^VALUE CommandTMatch_matches(VALUE self)$/;"	f
+CommandTMatch_to_s	match.c	/^VALUE CommandTMatch_to_s(VALUE self)$/;"	f
+CommandTMatcher_initialize	matcher.c	/^VALUE CommandTMatcher_initialize(int argc, VALUE *argv, VALUE self)$/;"	f
+CommandTMatcher_matches_for	matcher.c	/^VALUE CommandTMatcher_matches_for(VALUE self, VALUE abbrev)$/;"	f
+CommandTMatcher_sorted_matches_for	matcher.c	/^VALUE CommandTMatcher_sorted_matches_for(VALUE self, VALUE abbrev, VALUE options)$/;"	f
+CommandT_option_from_hash	ext.c	/^VALUE CommandT_option_from_hash(const char *option, VALUE hash)$/;"	f
+Controller	controller.rb	/^  class Controller$/;"	c	class:CommandT
+DEFFILE	Makefile	/^DEFFILE = $/;"	m
+DEFS	Makefile	/^DEFS     = $/;"	m
+DISTCLEANFILES	Makefile	/^DISTCLEANFILES = $/;"	m
+DLDFLAGS	Makefile	/^DLDFLAGS = $(ldflags) $(dldflags) $(archflag)$/;"	m
+DLLIB	Makefile	/^DLLIB = $(TARGET).bundle$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+EXTSTATIC	Makefile	/^EXTSTATIC = $/;"	m
+FileFinder	finder/file_finder.rb	/^  class FileFinder < Finder$/;"	c	class:CommandT
+FileLimitExceeded	scanner/file_scanner.rb	/^    class FileLimitExceeded < ::RuntimeError; end$/;"	c	class:CommandT.FileScanner
+FileScanner	scanner/file_scanner.rb	/^  class FileScanner < Scanner$/;"	c	class:CommandT
+Finder	finder.rb	/^  class Finder$/;"	c	class:CommandT
+INCFLAGS	Makefile	/^INCFLAGS = -I. -I$(topdir) -I$(hdrdir) -I$(srcdir)$/;"	m
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = $(INSTALL) -m 644$/;"	m
+INSTALL_PROG	Makefile	/^INSTALL_PROG = $(INSTALL) -m 0755$/;"	m
+Init_ext	ext.c	/^void Init_ext()$/;"	f
+JumpFinder	finder/jump_finder.rb	/^  class JumpFinder < Finder$/;"	c	class:CommandT
+JumpScanner	scanner/jump_scanner.rb	/^  class JumpScanner < Scanner$/;"	c	class:CommandT
+LDSHARED	Makefile	/^LDSHARED = cc -arch i386 -arch x86_64 -pipe -bundle -undefined dynamic_lookup$/;"	m
+LIBPATH	Makefile	/^LIBPATH =  -L. -L$(libdir)$/;"	m
+LIBRUBY	Makefile	/^LIBRUBY = $(LIBRUBY_SO)$/;"	m
+LIBRUBYARG_SHARED	Makefile	/^LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)$/;"	m
+LIBRUBYARG_STATIC	Makefile	/^LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)$/;"	m
+LIBRUBY_A	Makefile	/^LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a$/;"	m
+LIBS	Makefile	/^LIBS = $(LIBRUBYARG_SHARED)  -lpthread -ldl -lobjc  $/;"	m
+LOCAL_LIBS	Makefile	/^LOCAL_LIBS = $/;"	m
+MAKEDIRS	Makefile	/^MAKEDIRS = mkdir -p$/;"	m
+MatchWindow	match_window.rb	/^  class MatchWindow$/;"	c	class:CommandT
+OBJS	Makefile	/^OBJS = ext.o match.o matcher.o$/;"	m
+PathUtilities	vim/path_utilities.rb	/^    module PathUtilities$/;"	m	class:CommandT.VIM
+Prompt	prompt.rb	/^  class Prompt$/;"	c	class:CommandT
+RARRAY_LEN	ruby_compat.h	/^#define RARRAY_LEN(/;"	d
+RARRAY_PTR	ruby_compat.h	/^#define RARRAY_PTR(/;"	d
+RFLOAT_VALUE	ruby_compat.h	/^#define RFLOAT_VALUE(/;"	d
+RM	Makefile	/^RM = rm -f$/;"	m
+RSTRING_LEN	ruby_compat.h	/^#define RSTRING_LEN(/;"	d
+RSTRING_PTR	ruby_compat.h	/^#define RSTRING_PTR(/;"	d
+RUBY	Makefile	/^RUBY = $(ruby)$/;"	m
+RUBYARCHDIR	Makefile	/^RUBYARCHDIR   = $(sitearchdir)$(target_prefix)$/;"	m
+RUBYCOMMONDIR	Makefile	/^RUBYCOMMONDIR = $(sitedir)$(target_prefix)$/;"	m
+RUBYLIBDIR	Makefile	/^RUBYLIBDIR    = $(sitelibdir)$(target_prefix)$/;"	m
+RUBY_EXTCONF_H	Makefile	/^RUBY_EXTCONF_H = $/;"	m
+RUBY_INSTALL_NAME	Makefile	/^RUBY_INSTALL_NAME = ruby$/;"	m
+RUBY_SO_NAME	Makefile	/^RUBY_SO_NAME = ruby$/;"	m
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SRCS	Makefile	/^SRCS = ext.c match.c matcher.c$/;"	m
+STATIC_LIB	Makefile	/^STATIC_LIB = $/;"	m
+Scanner	scanner.rb	/^  class Scanner; end$/;"	c	class:CommandT
+Screen	vim/screen.rb	/^    module Screen$/;"	m	class:CommandT.VIM
+Settings	settings.rb	/^  class Settings$/;"	c	class:CommandT
+Stub	stub.rb	/^  class Stub$/;"	c	class:CommandT
+TARGET	Makefile	/^TARGET = ext$/;"	m
+TARGET_SO	Makefile	/^TARGET_SO     = $(DLLIB)$/;"	m
+TagFinder	finder/tag_finder.rb	/^  class TagFinder < Finder$/;"	c	class:CommandT
+TagScanner	scanner/tag_scanner.rb	/^  class TagScanner < Scanner$/;"	c	class:CommandT
+VIM	vim.rb	/^  module VIM$/;"	m	class:CommandT
+VIM	vim/path_utilities.rb	/^  module VIM$/;"	m	class:CommandT
+VIM	vim/screen.rb	/^  module VIM$/;"	m	class:CommandT
+VIM	vim/window.rb	/^  module VIM$/;"	m	class:CommandT
+VPATH	Makefile	/^VPATH = $(srcdir):$(topdir):$(hdrdir)$/;"	m
+Window	vim/window.rb	/^    class Window$/;"	c	class:CommandT.VIM
+abbrev_segments	prompt.rb	/^    def abbrev_segments$/;"	f	class:CommandT.Prompt
+accept_selection	controller.rb	/^    def accept_selection options = {}$/;"	f	class:CommandT.Controller.quickfix
+add!	match_window.rb	/^    def add! char$/;"	f	class:CommandT.MatchWindow
+add!	prompt.rb	/^    def add! char$/;"	f	class:CommandT.Prompt
+add_paths_for_directory	scanner/file_scanner.rb	/^    def add_paths_for_directory dir, accumulator$/;"	f	class:CommandT.FileScanner
+always_show_dot_files	match.c	/^    int     always_show_dot_files;  \/\/ boolean$/;"	m	struct:__anon1	file:
+arch	Makefile	/^arch = universal-darwin12.0$/;"	m
+archdir	Makefile	/^archdir = $(rubylibdir)\/$(arch)$/;"	m
+archflag	Makefile	/^archflag = $/;"	m
+backspace	controller.rb	/^    def backspace$/;"	f	class:CommandT.Controller.quickfix
+backspace!	match_window.rb	/^    def backspace!$/;"	f	class:CommandT.MatchWindow
+backspace!	prompt.rb	/^    def backspace!$/;"	f	class:CommandT.Prompt
+bindir	Makefile	/^bindir = $(exec_prefix)\/bin$/;"	m
+buffer_finder	controller.rb	/^    def buffer_finder$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+cCommandTMatch	ext.c	/^VALUE cCommandTMatch    = 0; \/\/ class CommandT::Match$/;"	v
+cCommandTMatcher	ext.c	/^VALUE cCommandTMatcher  = 0; \/\/ class CommandT::Matcher$/;"	v
+cancel	controller.rb	/^    def cancel$/;"	f	class:CommandT.Controller.quickfix
+capture	vim.rb	/^    def self.capture cmd$/;"	F	class:CommandT.VIM
+clear	controller.rb	/^    def clear$/;"	f	class:CommandT.Controller.quickfix
+clear	match_window.rb	/^    def clear$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+clear!	prompt.rb	/^    def clear!$/;"	f	class:CommandT.Prompt
+close	match_window.rb	/^    def close$/;"	f	class:CommandT.MatchWindow
+comp_alpha	matcher.c	/^int comp_alpha(const void *a, const void *b)$/;"	f
+comp_score	matcher.c	/^int comp_score(const void *a, const void *b)$/;"	f
+cursor_end	controller.rb	/^    def cursor_end$/;"	f	class:CommandT.Controller.quickfix
+cursor_end	prompt.rb	/^    def cursor_end$/;"	f	class:CommandT.Prompt
+cursor_left	controller.rb	/^    def cursor_left$/;"	f	class:CommandT.Controller.quickfix
+cursor_left	prompt.rb	/^    def cursor_left$/;"	f	class:CommandT.Prompt
+cursor_right	controller.rb	/^    def cursor_right$/;"	f	class:CommandT.Controller.quickfix
+cursor_right	prompt.rb	/^    def cursor_right$/;"	f	class:CommandT.Prompt
+cursor_start	controller.rb	/^    def cursor_start$/;"	f	class:CommandT.Controller.quickfix
+cursor_start	prompt.rb	/^    def cursor_start$/;"	f	class:CommandT.Prompt
+datadir	Makefile	/^datadir = $(datarootdir)$/;"	m
+datarootdir	Makefile	/^datarootdir = $(prefix)\/share$/;"	m
+default_open_command	controller.rb	/^    def default_open_command$/;"	f	class:CommandT.Controller.quickfix
+delete	controller.rb	/^    def delete$/;"	f	class:CommandT.Controller.quickfix
+delete!	prompt.rb	/^    def delete!$/;"	f	class:CommandT.Prompt
+dispose	prompt.rb	/^    def dispose$/;"	f	class:CommandT.Prompt
+dldflags	Makefile	/^dldflags = $/;"	m
+docdir	Makefile	/^docdir = $(datarootdir)\/doc\/$(PACKAGE)$/;"	m
+dot_file	match.c	/^    int     dot_file;               \/\/ boolean: true if str is a dot-file$/;"	m	struct:__anon1	file:
+dvidir	Makefile	/^dvidir = $(docdir)$/;"	m
+ensure_appropriate_window_selection	controller.rb	/^    def ensure_appropriate_window_selection$/;"	f	class:CommandT.Controller.quickfix
+ensure_cache_under_limit	scanner/file_scanner.rb	/^    def ensure_cache_under_limit$/;"	f	class:CommandT.FileScanner
+escape_for_single_quotes	vim.rb	/^    def self.escape_for_single_quotes str$/;"	F	class:CommandT.VIM
+exec_prefix	Makefile	/^exec_prefix = $(prefix)$/;"	m
+exists	vim.rb	/^    def self.exists? str$/;"	F	class:CommandT.VIM
+extout	Makefile	/^extout = $/;"	m
+extout_prefix	Makefile	/^extout_prefix = $/;"	m
+file_finder	controller.rb	/^    def file_finder$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+find	match_window.rb	/^    def find char$/;"	f	class:CommandT.MatchWindow
+flush	controller.rb	/^    def flush$/;"	f	class:CommandT.Controller.quickfix
+flush	finder/file_finder.rb	/^    def flush$/;"	f	class:CommandT.FileFinder
+flush	scanner/file_scanner.rb	/^    def flush$/;"	f	class:CommandT.FileScanner
+focus	match_window.rb	/^    def focus$/;"	f	class:CommandT.MatchWindow
+focus	prompt.rb	/^    def focus$/;"	f	class:CommandT.Prompt
+get_bool	controller.rb	/^    def get_bool name$/;"	f	class:CommandT.Controller.quickfix
+get_bool	settings.rb	/^    def get_bool setting$/;"	f	class:CommandT.Settings
+get_cursor_highlight	match_window.rb	/^    def get_cursor_highlight$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+get_list_or_string	controller.rb	/^    def get_list_or_string name$/;"	f	class:CommandT.Controller.quickfix
+get_number	controller.rb	/^    def get_number name$/;"	f	class:CommandT.Controller.quickfix
+get_number	settings.rb	/^    def get_number setting$/;"	f	class:CommandT.Settings
+get_string	controller.rb	/^    def get_string name$/;"	f	class:CommandT.Controller.quickfix
+handle_key	controller.rb	/^    def handle_key$/;"	f	class:CommandT.Controller.quickfix
+has_conceal	vim.rb	/^    def self.has_conceal?$/;"	F	class:CommandT.VIM
+has_syntax	vim.rb	/^    def self.has_syntax?$/;"	F	class:CommandT.VIM
+haystack_len	match.c	/^    long    haystack_len;           \/\/ length of same$/;"	m	struct:__anon1	file:
+haystack_p	match.c	/^    char    *haystack_p;            \/\/ pointer to the path string to be searched$/;"	m	struct:__anon1	file:
+hdrdir	Makefile	/^hdrdir = $(topdir)$/;"	m
+hide	controller.rb	/^    def hide$/;"	f	class:CommandT.Controller
+hide_cursor	match_window.rb	/^    def hide_cursor$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+htmldir	Makefile	/^htmldir = $(docdir)$/;"	m
+includedir	Makefile	/^includedir = $(prefix)\/include$/;"	m
+infodir	Makefile	/^infodir = $(DESTDIR)\/usr\/share\/info$/;"	m
+initialize	controller.rb	/^    def initialize$/;"	f	class:CommandT.Controller
+initialize	finder.rb	/^    def initialize path = Dir.pwd, options = {}$/;"	f	class:CommandT.Finder
+initialize	finder/buffer_finder.rb	/^    def initialize$/;"	f	class:CommandT.BufferFinder
+initialize	finder/file_finder.rb	/^    def initialize path = Dir.pwd, options = {}$/;"	f	class:CommandT.FileFinder
+initialize	finder/jump_finder.rb	/^    def initialize$/;"	f	class:CommandT.JumpFinder
+initialize	finder/tag_finder.rb	/^    def initialize options = {}$/;"	f	class:CommandT.TagFinder
+initialize	match_window.rb	/^    def initialize options = {}$/;"	f	class:CommandT.MatchWindow
+initialize	prompt.rb	/^    def initialize$/;"	f	class:CommandT.Prompt
+initialize	scanner/file_scanner.rb	/^    def initialize path = Dir.pwd, options = {}$/;"	f	class:CommandT.FileScanner
+initialize	scanner/tag_scanner.rb	/^    def initialize options = {}$/;"	f	class:CommandT.TagScanner
+initialize	settings.rb	/^    def initialize$/;"	f	class:CommandT.Settings
+jump_finder	controller.rb	/^    def jump_finder$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+jumps	scanner/jump_scanner.rb	/^    def jumps$/;"	f	class:CommandT.JumpScanner
+ldflags	Makefile	/^ldflags  = -L. -arch i386 -arch x86_64 $/;"	m
+leave	controller.rb	/^    def leave$/;"	f	class:CommandT.Controller.quickfix
+leave	match_window.rb	/^    def leave$/;"	f	class:CommandT.MatchWindow
+libdir	Makefile	/^libdir = $(exec_prefix)\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = $(exec_prefix)\/libexec$/;"	m
+libpath	Makefile	/^libpath = . $(libdir)$/;"	m
+line_contains_filename?	scanner/jump_scanner.rb	/^    def line_contains_filename? line$/;"	f	class:CommandT.JumpScanner
+lines	vim/screen.rb	/^      def self.lines$/;"	F	class:CommandT.VIM.Screen
+list_matches	controller.rb	/^    def list_matches$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+localedir	Makefile	/^localedir = $(datarootdir)\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = $(prefix)\/var$/;"	m
+lock	match_window.rb	/^    def lock$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+looped_symlink?	scanner/file_scanner.rb	/^    def looped_symlink? path$/;"	f	class:CommandT.FileScanner
+mCommandT	ext.c	/^VALUE mCommandT         = 0; \/\/ module CommandT$/;"	v
+mandir	Makefile	/^mandir = $(DESTDIR)\/usr\/share\/man$/;"	m
+map	controller.rb	/^    def map key, function, param = nil$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+match_limit	controller.rb	/^    def match_limit$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+match_text_for_idx	match_window.rb	/^    def match_text_for_idx idx$/;"	f	class:CommandT.MatchWindow
+match_with_syntax_highlight	match_window.rb	/^    def match_with_syntax_highlight match$/;"	f	class:CommandT.MatchWindow
+matches=	match_window.rb	/^    def matches= matches$/;"	f	class:CommandT.MatchWindow
+matchinfo_t	match.c	/^} matchinfo_t;$/;"	t	typeref:struct:__anon1	file:
+max_height	controller.rb	/^    def max_height$/;"	f	class:CommandT.Controller.quickfix
+max_score_per_char	match.c	/^    double  max_score_per_char;$/;"	m	struct:__anon1	file:
+memo	match.c	/^    double  *memo;                  \/\/ memoization$/;"	m	struct:__anon1	file:
+min_height	controller.rb	/^    def min_height$/;"	f	class:CommandT.Controller.quickfix
+missing	extconf.rb	/^def missing item$/;"	f
+move_cursor_to_selected_line	match_window.rb	/^    def move_cursor_to_selected_line$/;"	f	class:CommandT.MatchWindow
+needle_len	match.c	/^    long    needle_len;             \/\/ length of same$/;"	m	struct:__anon1	file:
+needle_p	match.c	/^    char    *needle_p;              \/\/ pointer to search string (needle)$/;"	m	struct:__anon1	file:
+never_show_dot_files	match.c	/^    int     never_show_dot_files;   \/\/ boolean$/;"	m	struct:__anon1	file:
+oldincludedir	Makefile	/^oldincludedir = $(DESTDIR)\/usr\/include$/;"	m
+open_selection	controller.rb	/^    def open_selection selection, options = {}$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+open_selection	finder.rb	/^    def open_selection command, selection, options = {}$/;"	f	class:CommandT.Finder
+open_selection	finder/tag_finder.rb	/^    def open_selection command, selection, options = {}$/;"	f	class:CommandT.TagFinder
+padding_for_selected_match	match_window.rb	/^    def padding_for_selected_match str$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+path=	finder.rb	/^    def path= path$/;"	f	class:CommandT.Finder
+path_excluded?	scanner/file_scanner.rb	/^    def path_excluded? path$/;"	f	class:CommandT.FileScanner
+paths	scanner/buffer_scanner.rb	/^    def paths$/;"	f	class:CommandT.BufferScanner
+paths	scanner/file_scanner.rb	/^    def paths$/;"	f	class:CommandT.FileScanner
+paths	scanner/jump_scanner.rb	/^    def paths$/;"	f	class:CommandT.JumpScanner
+paths	scanner/tag_scanner.rb	/^    def paths$/;"	f	class:CommandT.TagScanner
+pdfdir	Makefile	/^pdfdir = $(docdir)$/;"	m
+prefix	Makefile	/^prefix = $(DESTDIR)\/System\/Library\/Frameworks\/Ruby.framework\/Versions\/1.8\/usr$/;"	m
+preload	Makefile	/^preload = $/;"	m
+print_error	match_window.rb	/^    def print_error msg$/;"	f	class:CommandT.MatchWindow
+print_match	match_window.rb	/^    def print_match idx$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+print_matches	match_window.rb	/^    def print_matches$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+print_no_such_file_or_directory	match_window.rb	/^    def print_no_such_file_or_directory$/;"	f	class:CommandT.MatchWindow
+psdir	Makefile	/^psdir = $(docdir)$/;"	m
+pwd	vim.rb	/^    def self.pwd$/;"	F	class:CommandT.VIM
+quickfix	controller.rb	/^    def quickfix$/;"	f	class:CommandT.Controller
+recursive_match	match.c	/^double recursive_match(matchinfo_t *m,    \/\/ sharable meta-data$/;"	f
+redraw	prompt.rb	/^    def redraw$/;"	f	class:CommandT.Prompt
+refresh	controller.rb	/^    def refresh$/;"	f	class:CommandT.Controller.quickfix
+register_for_key_presses	controller.rb	/^    def register_for_key_presses$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+relative_path_under_working_directory	vim/path_utilities.rb	/^      def relative_path_under_working_directory path$/;"	f	class:CommandT.VIM.PathUtilities
+restore	settings.rb	/^    def restore$/;"	f	class:CommandT.Settings
+restore_window_dimensions	match_window.rb	/^    def restore_window_dimensions$/;"	f	class:CommandT.MatchWindow
+ruby	Makefile	/^ruby = \/System\/Library\/Frameworks\/Ruby.framework\/Versions\/1.8\/usr\/bin\/ruby$/;"	m
+ruby_inspect	ext.h	/^#define ruby_inspect(/;"	d
+ruby_version	Makefile	/^ruby_version = 1.8$/;"	m
+rubylibdir	Makefile	/^rubylibdir = $(libdir)\/ruby\/$(ruby_version)$/;"	m
+sanitize_path_string	controller.rb	/^    def sanitize_path_string str$/;"	f	class:CommandT.Controller.quickfix
+save	settings.rb	/^    def save$/;"	f	class:CommandT.Settings
+sbindir	Makefile	/^sbindir = $(exec_prefix)\/sbin$/;"	m
+select	vim/window.rb	/^      def self.select window$/;"	F	class:CommandT.VIM.Window
+select_next	controller.rb	/^    def select_next$/;"	f	class:CommandT.Controller.quickfix
+select_next	match_window.rb	/^    def select_next$/;"	f	class:CommandT.MatchWindow
+select_prev	controller.rb	/^    def select_prev$/;"	f	class:CommandT.Controller.quickfix
+select_prev	match_window.rb	/^    def select_prev$/;"	f	class:CommandT.MatchWindow
+selection	match_window.rb	/^    def selection$/;"	f	class:CommandT.MatchWindow
+set_bool	settings.rb	/^    def set_bool setting, value$/;"	f	class:CommandT.Settings
+set_number	settings.rb	/^    def set_number setting, value$/;"	f	class:CommandT.Settings
+set_status	prompt.rb	/^    def set_status *args$/;"	f	class:CommandT.Prompt
+set_wild_ignore	scanner/file_scanner.rb	/^    def set_wild_ignore(ignore)$/;"	f	class:CommandT.FileScanner
+sharedstatedir	Makefile	/^sharedstatedir = $(prefix)\/com$/;"	m
+show	controller.rb	/^    def show$/;"	f	class:CommandT.Controller.quickfix
+show_buffer_finder	controller.rb	/^    def show_buffer_finder$/;"	f	class:CommandT.Controller
+show_cursor	match_window.rb	/^    def show_cursor$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+show_file_finder	controller.rb	/^    def show_file_finder$/;"	f	class:CommandT.Controller
+show_jump_finder	controller.rb	/^    def show_jump_finder$/;"	f	class:CommandT.Controller
+show_tag_finder	controller.rb	/^    def show_tag_finder$/;"	f	class:CommandT.Controller
+sitearch	Makefile	/^sitearch = universal-darwin12.0$/;"	m
+sitearchdir	Makefile	/^sitearchdir = $(sitelibdir)\/$(sitearch)$/;"	m
+sitedir	Makefile	/^sitedir = $(DESTDIR)\/Library\/Ruby\/Site$/;"	m
+sitelibdir	Makefile	/^sitelibdir = $(sitedir)\/$(ruby_version)$/;"	m
+sorted_matches_for	finder.rb	/^    def sorted_matches_for str, options = {}$/;"	f	class:CommandT.Finder
+srcdir	Makefile	/^srcdir = .$/;"	m
+sysconfdir	Makefile	/^sysconfdir = $(prefix)\/etc$/;"	m
+tag_finder	controller.rb	/^    def tag_finder$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+taglist	scanner/tag_scanner.rb	/^    def taglist$/;"	f	class:CommandT.TagScanner.paths
+target_prefix	Makefile	/^target_prefix = $/;"	m
+term	controller.rb	/^    def term$/;"	f	class:CommandT.Controller.quickfix.ensure_appropriate_window_selection
+toggle_focus	controller.rb	/^    def toggle_focus$/;"	f	class:CommandT.Controller.quickfix
+topdir	Makefile	/^topdir = \/System\/Library\/Frameworks\/Ruby.framework\/Versions\/1.8\/usr\/lib\/ruby\/1.8\/universal-darwin12.0$/;"	m
+truncated_match	match_window.rb	/^    def truncated_match str$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+unfocus	match_window.rb	/^    def unfocus$/;"	f	class:CommandT.MatchWindow
+unfocus	prompt.rb	/^    def unfocus$/;"	f	class:CommandT.Prompt
+unload	controller.rb	/^    def unload$/;"	f	class:CommandT.Controller.quickfix
+unload	match_window.rb	/^    def unload$/;"	f	class:CommandT.MatchWindow
+unlock	match_window.rb	/^    def unlock$/;"	f	class:CommandT.MatchWindow.match_with_syntax_highlight
+vendorarchdir	Makefile	/^vendorarchdir = $(vendorlibdir)\/$(sitearch)$/;"	m
+vendordir	Makefile	/^vendordir = $(libdir)\/ruby\/vendor_ruby$/;"	m
+vendorlibdir	Makefile	/^vendorlibdir = $(vendordir)\/$(ruby_version)$/;"	m
+warn	stub.rb	/^    def warn *msg$/;"	f	class:CommandT.Stub
+wild_ignore	vim.rb	/^    def self.wild_ignore$/;"	F	class:CommandT.VIM
