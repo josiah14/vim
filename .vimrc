@@ -86,11 +86,11 @@ cnoremap <C-F4> <C-C><C-W>c
 set number
 
 set foldmethod=syntax
-autocmd Syntax normal zR
+autocmd Syntax * normal zR
 set cul
 hi CursorLine guibg=black guifg=NONE ctermbg=darkblue ctermfg=NONE
 hi Cursor guibg=white guifg=black
-set wrap  
+set wrap    
 set lbr
 set sw=4
 set ts=4
