@@ -8,7 +8,7 @@ if has("gui")
     colorscheme railscasts
     set guifont=Monaco:h13
 else
-    colorscheme slate
+    colorscheme desert
 endif
 
 syntax on
@@ -86,6 +86,7 @@ cnoremap <C-F4> <C-C><C-W>c
 set number
 
 set foldmethod=syntax
+autocmd Syntax normal zR
 set cul
 hi CursorLine guibg=black guifg=NONE ctermbg=darkblue ctermfg=NONE
 hi Cursor guibg=white guifg=black
@@ -106,7 +107,6 @@ filetype plugin on
 "let g:haddock_browser = "open"
 "let g:haddock_browser = "%s %s"
 
-" MiniBuffExplorer configuration
 hi MBENormal guifg=lightblue ctermfg=lightblue
 
 "-------------------------------------------------------------------------------
