@@ -8,7 +8,7 @@ if has("gui")
     colorscheme railscasts
     set guifont=Monaco:h13
 else
-    colorscheme desert
+    colorscheme jgb256
 endif
 
 syntax on
@@ -88,7 +88,7 @@ set number
 set foldmethod=syntax
 autocmd Syntax * normal zR
 set cul
-hi CursorLine guibg=black guifg=NONE ctermbg=darkblue ctermfg=NONE
+hi CursorLine guibg=black guifg=NONE ctermbg=235 ctermfg=NONE
 hi Cursor guibg=white guifg=black
 set wrap    
 set lbr
@@ -122,9 +122,79 @@ nmap <c-k>     <c-w><up>
 nmap <c-h>   <c-w>h
 nmap <c-l>  <c-w>l
 
+" map a right hand leader key
+nmap - <leader>
+
 " Tags specific leader shortcuts
 nmap <leader>l :TlistToggle<CR>
-nmap <leader>g :TlistAddFilesRecursive ./<CR>
 
 " NERDTree leader shortcuts
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR><c-l>
+
+" vim-slime configure for tmux
+let g:slime_target = "tmux"
+
+" configure ctrlp
+let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+nmap <c-p><c-b> :CtrlPBuffer<CR>
+nmap <c-p><c-m> :CtrlPMRU<CR>
+nmap <c-p><c-t> :CtrlPTag<CR>
+nmap <c-p><c-h> :CtrlPBufTag<CR> 
+nmap <c-p><c-d> :CtrlPDir<CR> 
+nmap <c-p><c-u> :CtrlPUndo<CR>
+nmap <c-p><c-l> :CtrlPLine<CR>
+nmap <c-p><c-c> :CtrlPChange<CR>
+nmap <c-p><c-p> :CtrlP<CR>
+nmap <c-p><c-y> :CtrlPBookmarkDir<CR>
+nmap <c-p><c-x> :CtrlPMixed<CR>
+
+" configure Gundo
+nmap <leader>u :GundoToggle<CR>
+
+" map minibuf exploreror
+nmap <leader>mbt :MBEToggle<cr>
+
+" Syntastic shortcuts
+nmap <leader>se :Errors<cr>
+nmap <leader>st  :SyntasticToggleMode<cr>
+nmap <leader>sc  :SyntasticCheck<cr>
+
+" tern shortcuts
+nmap <leader>t] :TernDef<cr>
+nmap <leader>td :TernDoc<cr>
+nmap <leader>tt :TernType<cr>
+nmap <leader>tr :TernRefs<cr>
+nmap <leader>tm :TernRename<cr>
+
+" Bundler shortcuts
+nmap <leader>gem :Bopen
+nmap <leader>gems :Bsplit
+nmap <leader>gemv :Bvsplit
+nmap <leader>bu  :Dispatch Bundle update<cr>
+nmap <leader>bi  :Dispatch Bundle install<cr>
+
+" Rails shortcuts
+nmap <leader>rl :Rlog
+nmap <leader>rp :Rpreview
+nmap <leader>rg :Ctags<cr>
+nmap <leader>rc :Cd<cr>
+nmap <leader>rl :Lcd<cr>
+
+" Rake shortcuts
+nmap <leader>sp :Espec
+nmap <leader>rk :Etask
+nmap <leader>mi :Dispatch Rake db:migrate<cr>
+nmap <leader>rs :Dispatch Rake db:reset<cr>
+nmap <leader>cr :Dispatch Rake db:create<cr>
+nmap <leader>sl :Dispatch Rake db:schema:load<cr>
+nmap <leader>set :Dispatch Rake db:setup<cr>
+
+" configure Fugitive
+nmap <leader>g :Git
+nmap <leader>gi :Git init<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gl :Dispatch git log<cr>
+nmap <leader>gc :Dispatch git commit -m "
+nmap <leader>gA :Dispatch Git add .<cr>
+nmap <leader>gpm :Dispatch Git push origin master<cr>
+nmap <leader>gp :Dispatch Git push
