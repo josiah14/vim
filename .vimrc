@@ -138,7 +138,7 @@ let g:slime_target = "tmux"
 let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 nmap <c-p><c-b> :CtrlPBuffer<CR>
 nmap <c-p><c-m> :CtrlPMRU<CR>
-nmap <c-p><c-t> :CtrlPTag<CR>
+nmap <c-p><c-t> :tjump 
 nmap <c-p><c-h> :CtrlPBufTag<CR> 
 nmap <c-p><c-d> :CtrlPDir<CR> 
 nmap <c-p><c-u> :CtrlPUndo<CR>
@@ -178,7 +178,7 @@ nmap <leader>rl :Rlog
 nmap <leader>rp :Rpreview
 nmap <leader>rg :Ctags<cr>
 nmap <leader>rc :Cd<cr>
-nmap <leader>rl :Lcd<cr>
+nmap <leader>rlc :Lcd<cr>
 
 " Rake shortcuts
 nmap <leader>sp :Espec
@@ -198,3 +198,4 @@ nmap <leader>gc :Dispatch git commit -m "
 nmap <leader>gA :Dispatch Git add .<cr>
 nmap <leader>gpm :Dispatch Git push origin master<cr>
 nmap <leader>gp :Dispatch Git push
+
