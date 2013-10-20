@@ -1,6 +1,10 @@
 execute pathogen#infect()
 
-set mouse=a
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 set nocompatible
 
@@ -11,8 +15,19 @@ else
     colorscheme jgb256
 endif
 
+set hlsearch
+
 syntax on
 filetype plugin indent on
+"autocmd FileType html,xml,haml,less,css,ruby match OverLength '\%>80v.\+'
+"autocmd FileType html,xml,haml,less,css,ruby highlight OverLength ctermbg=darkred ctermfg=white guibg=#59
+
+if exists('+colorcolumn')
+    highlight ColorColumn ctermbg=233 guibg=darkred
+    let &colorcolumn="81,".join(range(121,999),",")
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " backspace in Visual mode deletes selection
 vnoremap <BS>  d
@@ -20,6 +35,9 @@ vnoremap <BS>  d
 " allow user to backspace as much as they want in insert mode
 set backspace=2
 set backspace=indent,eol,start
+
+" save marks between sessions
+set viminfo='1000,f1
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
@@ -92,8 +110,8 @@ hi CursorLine guibg=black guifg=NONE ctermbg=235 ctermfg=NONE
 hi Cursor guibg=white guifg=black
 set wrap    
 set lbr
-set sw=4
-set ts=4
+set sw=2
+set ts=2
 set expandtab
 
 " use ghc functionality for haskell files
@@ -129,7 +147,7 @@ nmap - <leader>
 nmap <leader>l :TlistToggle<CR>
 
 " NERDTree leader shortcuts
-nmap <leader>n :NERDTreeToggle<CR><c-l>
+nmap <leader>n :NERDTreeToggle<CR>
 
 " vim-slime configure for tmux
 let g:slime_target = "tmux"
@@ -177,17 +195,19 @@ nmap <leader>bi  :Dispatch Bundle install<cr>
 nmap <leader>rl :Rlog
 nmap <leader>rp :Rpreview
 nmap <leader>rg :Ctags<cr>
-nmap <leader>rc :Cd<cr>
+nmap <leader>rcd :Cd<cr>
 nmap <leader>rlc :Lcd<cr>
+nmap <leader>rc :Dispatch rails console<cr><c-b>o
+nmap <leader>srv :Dispatch! rails s<cr>
 
 " Rake shortcuts
-nmap <leader>sp :Espec
+nmap <leader>esp :Espec
 nmap <leader>rk :Etask
-nmap <leader>mi :Dispatch Rake db:migrate<cr>
-nmap <leader>rs :Dispatch Rake db:reset<cr>
-nmap <leader>cr :Dispatch Rake db:create<cr>
-nmap <leader>sl :Dispatch Rake db:schema:load<cr>
-nmap <leader>set :Dispatch Rake db:setup<cr>
+nmap <leader>mi :Dispatch bundle exec rake db:migrate<cr>
+nmap <leader>rs :Dispatch bundle exec rake db:reset<cr>
+nmap <leader>cr :Dispatch bundle exec rake db:create<cr>
+nmap <leader>sl :Dispatch bundle exec rake db:schema:load<cr>
+nmap <leader>set :Dispatch bundle exec rake db:setup<cr>
 
 " configure Fugitive
 nmap <leader>g :Git
@@ -195,7 +215,20 @@ nmap <leader>gi :Git init<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gl :Dispatch git log<cr>
 nmap <leader>gc :Dispatch git commit -m "
-nmap <leader>gA :Dispatch Git add .<cr>
+nmap <leader>ga :Dispatch Git add .<cr>
 nmap <leader>gpm :Dispatch Git push origin master<cr>
 nmap <leader>gp :Dispatch Git push
+nmap <leader>gb :Dispatch git checkout -b 
 
+" jump into pry shortcuts
+" debug requiring the current file in pry from a tmux split
+nmap <leader>pf :Dispatch pry -r %:p 
+
+nmap <leader>bl :buffers<cr>
+
+" guard and spork
+nmap <leader>gd :Dispatch! guard<cr>
+nmap <leader>sp :Dispatch! spork<cr>
+
+" run tests (rspec)
+nmap <leader>tst :!rspec spec/
