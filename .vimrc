@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+autocmd Syntax c,cpp,vim,less,haml,ruby,css,html,xml,html,xhtml,perl normal zR
+
 set mouse+=a
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
@@ -7,6 +9,43 @@ if &term =~ '^screen'
 endif
 
 set nocompatible
+
+" first, enable status line always
+set laststatus=2
+
+" set the command bar height
+set cmdheight=1
+
+" don't redraw while executing macros
+set lazyredraw
+
+" set autoread when file is externally edited
+set autoread
+
+" set how many lines of history vim should remember
+set history=1000
+
+" turn backup off since stuff is backed up in github
+set nobackup
+set nowb
+set noswapfile
+
+" close all the buffers
+map <leader>cb :1,1000 bd!<cr>
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermbg=53 ctermfg=11
+  elseif a:mode == 'r'
+    hi statusline ctermbg=22 ctermfg=203
+  else
+    hi statusline ctermbg=52 ctermfg=10
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertChange * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline ctermbg=232 ctermfg=7
 
 if has("gui")
     colorscheme railscasts
@@ -19,11 +58,35 @@ set hlsearch
 
 syntax on
 filetype plugin indent on
+" show and get rid of trailing whitespace
+match ErrorMsg '\s\+$'
+function ShowSpaces(...)
+    let @/='\v(\s+$)|( +\ze\t )'
+    let oldhlsearch=&hlsearch
+    if !a:0
+      let &hlsearch=!&hlsearch
+    else
+      let &hlsearch=a:1
+    end
+    return oldhlsearch
+endfunction
+
+function TrimSpaces() range
+  let oldhlsearch=ShowSpaces(1)
+  execute a:firstline.",".a:lastline."substitute ///gec"
+  let &hlsearch=oldhlsearch
+endfunction
+
+nmap <silent> <F5> :call TrimSpaces()<CR>
+
+
+let g:gist_clip_command = 'pbcopy'
+
 "autocmd FileType html,xml,haml,less,css,ruby match OverLength '\%>80v.\+'
 "autocmd FileType html,xml,haml,less,css,ruby highlight OverLength ctermbg=darkred ctermfg=white guibg=#59
 
 if exists('+colorcolumn')
-    highlight ColorColumn ctermbg=233 guibg=darkred
+    highlight ColorColumn ctermbg=233 guibg=black
     let &colorcolumn="81,".join(range(121,999),",")
 else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
@@ -47,6 +110,9 @@ vnoremap <S-Del> "+x
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
+" Use CTRL-Q to do what CTRL-V used to do
+noremap <C-Q>		<C-V>
+
 " CTRL-V and SHIFT-Insert are Paste
 nnoremap <silent> <SID>Paste "=@+.'xy'<CR>gPFx"_2x
 map <C-V>		<SID>Paste
@@ -60,9 +126,6 @@ cmap <S-Insert>		<C-R>+
 
 vmap <C-V>		"-cx<Esc><SID>Paste"_x
 vmap <S-Insert>		"-cx<Esc><SID>Paste"_x
-
-" Use CTRL-Q to do what CTRL-V used to do
-noremap <C-Q>		<C-V>
 
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
@@ -108,11 +171,22 @@ autocmd Syntax * normal zR
 set cul
 hi CursorLine guibg=black guifg=NONE ctermbg=235 ctermfg=NONE
 hi Cursor guibg=white guifg=black
-set wrap    
+set nowrap
 set lbr
 set sw=2
 set ts=2
 set expandtab
+set ai
+set si
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " use ghc functionality for haskell files
 "au Bufenter *.hs compiler ghc
@@ -129,7 +203,7 @@ hi MBENormal guifg=lightblue ctermfg=lightblue
 
 "-------------------------------------------------------------------------------
 " Moving cursor to other windows
-" 
+"
 " shift down   : change window focus to lower one (cyclic)
 " shift up     : change window focus to upper one (cyclic)
 " shift left   : change window focus to one on left
@@ -156,9 +230,9 @@ let g:slime_target = "tmux"
 let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 nmap <c-p><c-b> :CtrlPBuffer<CR>
 nmap <c-p><c-m> :CtrlPMRU<CR>
-nmap <c-p><c-t> :tjump 
-nmap <c-p><c-h> :CtrlPBufTag<CR> 
-nmap <c-p><c-d> :CtrlPDir<CR> 
+nmap <c-p><c-t> :tjump
+nmap <c-p><c-h> :CtrlPBufTag<CR>
+nmap <c-p><c-d> :CtrlPDir<CR>
 nmap <c-p><c-u> :CtrlPUndo<CR>
 nmap <c-p><c-l> :CtrlPLine<CR>
 nmap <c-p><c-c> :CtrlPChange<CR>
@@ -214,15 +288,15 @@ nmap <leader>g :Git
 nmap <leader>gi :Git init<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gl :Dispatch git log<cr>
-nmap <leader>gc :Dispatch git commit -m "
+nmap <leader>gc :Dispatch git commit -m "PHAPPDEV-
 nmap <leader>ga :Dispatch Git add .<cr>
 nmap <leader>gpm :Dispatch Git push origin master<cr>
 nmap <leader>gp :Dispatch Git push
-nmap <leader>gb :Dispatch git checkout -b 
+nmap <leader>gb :Dispatch git checkout -b
 
 " jump into pry shortcuts
 " debug requiring the current file in pry from a tmux split
-nmap <leader>pf :Dispatch pry -r %:p 
+nmap <leader>pf :Dispatch pry -r %:p
 
 nmap <leader>bl :buffers<cr>
 
@@ -232,3 +306,36 @@ nmap <leader>sp :Dispatch! spork<cr>
 
 " run tests (rspec)
 nmap <leader>tst :!rspec spec/
+
+" generate ctags
+nmap <leader>gt :Dispatch /usr/local/Cellar/ctags/5.8/bin/ctags -R --exclude=.git --tag-relative=yes *<cr>
+
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+  let l:currentBufNum = bufnr("%")
+  let l:alternateBufNum = bufnr("#")
+
+  if buflisted(l:alternateBufNum)
+    buffer #
+  else
+    bnext
+  endif
+
+  if bufnr("%") == l:currentBufNum
+    new
+  endif
+
+  if buflisted(l:currentBufNum)
+    execute("bdelete! ".l:currentBufNum)
+  endif
+endfunction
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+  if &paste
+    return 'PASTE MODE  '
+  endif
+
+  return ''
+endfunction
